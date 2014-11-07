@@ -1,0 +1,987 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Start5.BZ</title>
+        <link rel="stylesheet" href="style_pc.css" type="text/css">
+        <link rel="stylesheet" href="css/menu.css" type="text/css">
+        <link rel="stylesheet" href="css/zTreeStyle.css" type="text/css">
+        <link rel="stylesheet" href="css/jquery.contextMenu.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+        <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+        <script type="text/javascript" src="js/jquery.jsonp.js"></script>
+        <script type="text/javascript" src="js/jquery.ztree.core-3.5.js"></script>
+        <script type="text/javascript" src="js/jquery.ztree.excheck-3.5.js"></script>
+        <script type="text/javascript" src="js/jquery.ztree.exhide-3.5.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/easyXDM.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.position.js"></script>
+        <script type="text/javascript" src="js/jquery.contextMenu.js"></script>
+        <script type="text/javascript" src="js/jshashtable-3.0.js"></script>
+        <script type="text/javascript" src="js/jquery.numberformatter-1.2.4.js"></script>
+        <script type="text/javascript" src="js/jquery.simpletip-1.3.1.js"></script>
+        <script type="text/javascript" src="js/async.js"></script>
+        <script type="text/javascript" src="js/zip.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+        <script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+        <script type="text/javascript" src="js/jquery.fileupload.js"></script>
+        <script type="text/javascript" src="nhpup_1.1.js"></script>
+
+
+    </head>
+    <body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+    (function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+    try {
+    w.yaCounter25939742 = new Ya.Metrika({id:25939742,
+    webvisor:true,
+    clickmap:true,
+    trackLinks:true,
+    accurateTrackBounce:true});
+    } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+    s = d.createElement("script"),
+    f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+    d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/25939742" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <script type="text/javascript"><!--
+    document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") +
+            "start5.postaffiliatepro.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+    </script>
+    <script type="text/javascript"><!--
+    PostAffTracker.setAccountId('default1');
+    try {
+        PostAffTracker.track();
+    } catch (err) { }
+    //-->
+    </script>
+        <div id="main">
+            <div id="menu" class="codrops-demos">
+                <div id='cssmenu'>
+                    <ul>
+                        <li><a id="keywords" class="nmenuElement"><span>Ключевики</span></a></li>
+                        <li><a  id="header"  class="nmenuElement"><span>Объявления</span></a></li>
+                        <li class='last'><a  id="text"  class="nmenuElement"><span>Помощь</span></a></li>
+                    </ul>
+                </div>
+                <span class="progress-bar blue stripes">
+                        <span id="proc" style="width: 0%;"></span>
+                 </span>
+                <div class="menuInfo">
+                <span class="hides" >Всего объявлений:<strong>
+                <span class="allAncount">(0)</span></strong></span>
+                    <!--<span >Ваша РК:</span>-->
+                    <select id="selectRK" hidden="true">
+                        <option>Start5</option>
+                        <option>Создать новую</option>
+                    </select>
+
+
+
+                    <span class="hides">Итого:</span>
+                    <span class="price hides"><strong>0</strong></span>
+                <!--<span id="details"><strong>Детали</strong></span>-->
+                <span class="fa fa-bars hides"></span>
+                <input id="rkPay" type="button" value="Сохранить"/>
+
+                <span class="fa fa-smile-o"></span>
+                <span id="realname">Наш клиент</span>
+                <span class="fa fa-bars"></span>
+            </div>
+        </div><!-- КОНЕЦ Меню -->
+
+            <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KEYS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <!-- Содержание -->
+            <div id="content_keywords" class="content">
+                <div class="col pusherb">
+                    <div class="infoblock shadowD">
+                        <div class="hunder ">Подобрать в WordStat | <a href="#" id="spyWordsBtn">SpyWords</a></div>
+                        <div class="infoline">
+                            Регион:
+                            <select id="yandexRegion">
+                            </select>
+                        </div>
+                        <div class="infoline">
+                            <span>Мин  запросов </span>
+                            <input id="minKW" type="text" value="25"/>
+                        </div>
+
+                        <div id="search" class="infoline">
+                            <input type="text" id="keyw_pool"/>
+                            <input type="button" id="ws_button" value="Подобрать"/>
+
+                        </div>
+                    </div>
+                    <div  class="infoblock shadowD">
+                        <div class="hunder">Импорт ключевых запросов <span id="help1" onmouseover="nhpup.popup('С помощью импорта можно перенести заранее подготовленные ключевики из файлов рекламных компаний поисковых систем, excel или текстовых файлов. ', {'width': 290});" class="fa fa-question-circle"></span></div>
+
+                            <div class="infoline">
+                                <div id="from_file" class="importLabel">Из файла:</div>
+                                <input type="button" id="importFileBtn" class="importBtn" value="Импорт"/>
+                                <input type="file" id="importFileBtnIn" class="importBtn" value="Импорт" hidden="true"/>
+                            </div><!-- КОНЕЦ Из файла -->
+
+                            <!-- Из рекламной компании Яндекс -->
+                            <div  class="infoline">
+                                <div id="from_rk" for="rkimport_button" class="importLabel">Из РК Яндекс:</div>
+                                <input type="button" id="rkimport_button" class="importBtn" value="Импорт"/>
+                                <input type="file" id="rkimport_buttonIn" class="importBtn" value="Импорт" hidden="true"/>
+
+                            </div>
+
+                            <!-- Из прайсов -->
+                            <div  class="infoline">
+                                <div   for="rkimport_button" class="importLabel">Из Прайса:</div>
+                                <input id="fromprice" type="button" class="importBtn" disabled value="Импорт"/>
+                                <input type="file" class="importBtn" disabled value="Импорт" hidden="true"/>
+
+                            </div>
+                           <!-- <div  class="infoline">
+                                <div  for="rkimport_button" class="importLabel">Из РК Google:</div>
+                                <input type="button"  class="importBtn" value="Импорт"/>
+
+                            </div>
+                            <div  class="infoline">
+                                <div for="rkimport_button" class="importLabel">Из РК Begun:</div>
+                                <input type="button" class="importBtn" value="Импорт"/>
+
+                            </div>
+                            -->
+                    </div>
+                    <div  class="infoblock shadowD">
+                        <div class="hunder">Генератор запросов <span id="help2" onmouseover="nhpup.popup('Вы можете автоматически сгенерировать дополнительные запросы из уже подобранных в Wordstat или импортированных из файла.Абракадабра – набранные без переключения раскладки клавиатуры Транслит – русская фраза набранная на английском kontekstnaya reklama Сгенерированные запросы будут в одном объявлении с исходным запросом, сохраняя принцип релевантности. ', {'width': 290});" class="fa fa-question-circle"></span></div>
+                        <!-- конверсия запросов в абракадабру -->
+
+                            <div id="abrakadabra" class="infoline">
+                                <input type="checkbox" id="galochka" disabled/>
+                                <div id="text_abra">Абракадабра</div>
+                            </div>
+
+                            <div id="translit" class="infoline">
+                                <input type="checkbox" id="galochka2" checked="checked"/>
+                                <div id="text_trans">Транслит</div>
+                            </div>
+
+                            <div id="opech" class="infoline ">
+                                <input type="checkbox" disabled   />
+                                <div id="text_opech">Опечатки</div>
+                            </div>
+
+                        <!-- <div class="infoline ">
+                             <input type="checkbox" disabled />
+                             <div id="text_opech_abr">Опечатки в абракадабре</div>
+                         </div>-->
+                 </div>
+             </div>
+
+             <!-- ПОЛОВИНКА -->
+                <div class="col">
+                    <div  class="infoblock shadowD bigel">
+
+                        <div class="hunder">Ключевые слова <span class="anncount">(0)</span><span onmouseover="nhpup.popup('При создании объявления нужно указать ключевые слова, по которым оно будет показываться. Показ объявления произойдет, если пользователь наберет в поиске запрос, полностью содержащий ключевое слово или фразу. От правильности подбора слов во многом зависит эффективность рекламы.', {'width': 290});" id="help3" class="fa fa-question-circle"></span><input id="rulesetbtnmain" type="button" value="Правила"/> </div>
+
+                        <div id="key_list" class="borderT listD">
+                            <ul id="treeKeys" class="ztree"></ul>
+                        </div>
+                        <input id="delAll" type="button" value="Удалить Все" />
+                    </div>
+                    <div  class="infoblock shadowD bigel">
+
+                            <div  class="hunder">Что еще искали <span id="help4" onmouseover="nhpup.popup('Правый столбец в результатах статистики запросов «что еще искали люди» (если он есть) может дать вам интересные идеи о том, какие еще ключевые слова используют ваши потенциальные клиенты.', {'width': 290});" class="fa fa-question-circle"></span></div>
+
+                            <!--<div id="searchInAlt" class="infoline">
+                                <input type="text" id="keywAlt_pool"/>
+                                <input type="button" id="ws_buttonAlt" value="Фильтр"/>
+                            </div>-->
+                            <div id="key_listAlt" class="borderT listD">
+                                <ul id="keysTreeAlt" class="ztree"></ul>
+                            </div>
+
+                    </div>
+                    <div  class="infoblock shadowD bigel">
+                        <div>
+
+                            <div  class="hunder">Минус слова <span id="help5" onmouseover="nhpup.popup('Используйте минус-слова, чтобы объявление не показывалось в ответ на похожие, но не подходящие по смыслу запросы. Подобрав минус слова вы исключите нецелевые переходы на ваш сайт и сэкономите рекламный бюджет. ', {'width': 290});" class="fa fa-question-circle"></span> </div>
+                            <!--<div class="infoline">
+                                <div class="importLabel">Выбрать из базы:</div>
+                                <input type="button" class="importBtn" id="adddefminwords" value="Выбрать"/>
+                            </div>--><!-- КОНЕЦ Из файла -->
+                            <!--<div class="add_minus infoline">
+                                 Слова
+
+                                <input type="text" id="add_textminus" value=""/>
+                                <input type="button" id="kw_mw_addbtn" value="Фильтр"/>
+                            </div>--><!-- КОНЕЦ Доваление слова -->
+                            <div id="minus" class=" borderT listD">
+
+                            </div>
+                        </div><!-- КОНЕЦ Минус слова -->
+                    </div>
+                </div><!-- Конец ПОЛОВИНКИ -->
+
+
+
+                
+
+                
+
+
+             </div><!-- КОНЕЦ Содержание -->
+
+            <div id="content_header" class="content">
+                <div class="col pusherb">
+                    <div class="infoblock shadowD setbl">
+                        <div class="hunder ">Настройка генерации <span id="help6" onmouseover="nhpup.popup('Нажмите на кнопку “Настроить” что бы перейти в раздел настройки генерации. Создайте или отредактируйте правила по которым будут генерироваться объявления и посмотрите как это выглядит. ', {'width': 290});" class="fa fa-question-circle"></span></div>
+                        <div class="infoline"><div class="gensettext">Правила </div><input id="rulesetbtn" type="button" value="Настроить"/> </div>
+                        <div class="infoline"><div class="gensettext">Цена за клик </div><input id="cpcbtn" type="button" value="Настроить"/> </div>
+                        <div class="infoline"><div class="gensettext">Визитка </div><input id="vizBtn" type="button" value="Настроить"/> </div>
+                        <div class="infoline"><div class="gensettext">Быстрые ссылки </div><input class="disBtn" disabled type="button" value="Настроить"/> </div>
+                        <div class="infoline"><div class="gensettext">Таргетинг </div><input class="disBtn" disabled type="button" value="Настроить"/> </div>
+                    </div>
+                    <div class="infoblock shadowD setbl">
+                        <div class="hunder">Поиск по объявлениям <span id="help7" onmouseover="nhpup.popup('Используя поиск, вы можете быстро осуществлять навигацию по всему блоку предпросмотра. Поиск ведется по всем поисковикам и элементам объявления. ', {'width': 290});" class="fa fa-question-circle"></span></div>
+                        <div class="infoline">
+                            <div class="gensettext">Площадка</div>
+                            <select id="seloc">
+                                <option value="se">Все</option>
+                                <option value="yan">Яндекс</option>
+                                <option value="goo">Google</option>
+                                <option value="be">Begun</option>
+                            </select>
+                        </div>
+                        <div class="infoline">
+                            <div class="gensettext">Ключивик</div>
+                            <input id="serKW" type="text"/>
+                        </div>
+                        <div class="infoline">
+                            <div class="gensettext">Заголовок</div>
+                            <input id="seHe" type="text"/>
+                        </div>
+                        <div class="infoline">
+                            <div class="gensettext">Текст</div>
+                            <input id="seTe" type="text"/>
+                        </div>
+                        <div class="infoline">
+                            <div class="gensettext">Ссылка</div>
+                            <input id="seUrl" type="text"/>
+                        </div>
+                        <div class="infoline">
+                            <div class="gensettext">Только с ошибками</div>
+                            <input id="errorOnly" type="checkbox"/>
+                        </div>
+
+
+                    </div>
+                    <div class="infoblock shadowD setbl">
+                        <div class="hunder ">Замена слова <span id="help8" onmouseover="nhpup.popup('Поиск и замена слов позволяют быстро работать со словами, требующими написания с большой буквы, а так же для быстрого редактирования объявления. Легко изменяйте свои офферы и акции.', {'width': 290});" class="fa fa-question-circle"></span></div>
+                        <div class="infoline">
+                            <div class="gensettext">Площадка</div>
+                            <select id="repLoc">
+                                <option value="se">Все</option>
+                                <option value="yan">Яндекс</option>
+                                <option value="goo">Google</option>
+                                <option value="be">Begun</option>
+                            </select>
+                        </div>
+
+                        <div class="infoline">
+                            <div class="gensettext">Место замены</div>
+                            <select id="repPlace">
+                                <option value="se">Все</option>
+                                <option value="Header">Заголовок</option>
+                                <option value="Text">Текст</option>
+                                <option value="Url">Ссылка</option>
+                            </select>
+                        </div>
+
+                        <div class="infoline">
+                            <div class="gensettext">Текст поиска</div>
+                            <input id="repTarget" type="text"/>
+                        </div>
+
+                        <div class="infoline">
+                            <div class="gensettext">Заменить на</div>
+                            <input id="repWord" type="text"/>
+                        </div>
+                        <div class="infoline"> </div>
+                        <div class="infoline">
+                            <input id="repBtn" type="button" value="Заменить"/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="announcs pusherb shadowD blockdec">
+
+                    <div class="newline"></div>
+
+                        <div class="announch hunder">
+                            <div class="announcHeader">Ключевые фразы <span class="anncount">(0)</span></div>
+                            <div class="announcHeader">
+                                <input type="checkbox" checked="checked" id="yaEn"/>
+
+                                <img src="img/yaLogo.png"/>
+
+                            </div>
+                            <div class="announcHeader">
+                                <input type="checkbox" checked="checked" id="goEn"/>
+
+                                <img src="img/goLogo.png"/>
+                            </div>
+                            <div class="announcHeader">
+                                <input type="checkbox" checked="checked" id="beEn"/>
+
+                                <img src="img/logo-begun.png"/>
+                            </div>
+                        </div>
+
+
+
+
+
+                </div>
+
+            </div> <!--Конец Содержание-->
+            <div id="content_text" class="content">
+                <div class="col pusherb">
+                <!-- HTML START -->
+                    <div id="faqform">
+                    <div id="questions">
+                        <a class="question infoline" href="#kw">1.	Как подбирать ключевые слова?</a>
+                        <a class="question infoline" href="#mw">2.	Что такое минус-слова?</a>
+                        <a class="question infoline" href="#ca">3.	Как написать продающее объявление?</a>
+                        <a class="question infoline" href="#ra">4.	Как написать выделяющееся объявление?</a>
+                        <a class="question infoline" href="#sc">5.	Как сохранить кампанию?</a>
+                        <a class="question infoline" href="#uc">6.	Как загрузить кампанию в Яндекс Директ?</a>
+                        <a class="question infoline" href="#ucg">7.	Как загрузить кампанию в Google Adwords?</a>
+                    </div>
+                    <div id="answers">
+                    <div class="answer">
+                        <a name="kw"></a>
+                        <h2 >Как подбирать ключевые запросы?</h2>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/yFr-ws7iRrs" frameborder="0" allowfullscreen></iframe>
+                        <div class="aText">
+                            <ul>
+                                • Представьте себе, что могут искать те люди, которые хотят найти ваш товар или предлагаемую услугу.</ul>
+
+
+                            <ul>
+                                • Посмотрите, какие фразы можно позаимствовать из текстов на вашем сайте и из прайс-листа вашей компании;</ul>
+
+
+                            <ul>
+                                • Подумайте о более конкретных формулировках ваших
+                                ключевых слов. Например, к фразе «отдых в Турции» можно добавить названия турецких курортов: «Анталия», «Кемер», «Мармарис», «Бодрум» и др.</ul>
+
+
+                            <ul>
+                                • Используйте разные части речи с одним корнем. Например, к словосочетанию «магазин мебели» может быть целесообразным добавить «мебельный магазин».</ul>
+
+
+                            <ul>
+                                • Правый столбец в результатах статистики запросов «что еще искали люди» (если он есть) может дать вам интересные идеи о том, какие еще ключевые слова используют ваши потенциальные клиенты.</ul>
+
+
+                            <ul>
+
+                                • Помните о распространенных опечатках. Известно, что 14% всех запросов на Яндексе содержат ошибки. Например, слово «риэлтор» запрашивается в 27 вариантах его написания: «риэлтер», «риелтор», «риелтер», «реэлтор», «реелтор», «риэлтр» и др.;</ul>
+
+                            <ul>
+
+                                • Учитывайте популярные опечатки и запросы, набранные без переключения раскладки клавиатуры. В ответ на такие запросы будут показаны объявления по автоматически исправленным запросам. Однако редкие опечатки и различные варианты написания слов не будут исправлены автоматически. Чтобы объявление показывалось по таким целевым, но неправильно набранным запросам, необходимо при подборе ключевых слов учесть и слова с опечатками.</ul>
+
+
+                            <ul>
+                                • Учитывайте возможные ошибки в написании
+                                сложносоставных слов. Например, слово
+                                «металлочерепица» нередко пишут в два слова
+                                «металло черепица».</ul>
+
+                            <ul>
+
+                                • Не пренебрегайте редкими запросами — конкуренция по ним часто отсутствует, а значит, стоимость привлечения клиента будет ниже. Один такой запрос, конечно, не приведет достаточно клиентов, а вот двадцать — вполне</ul>
+
+
+                            <ul>
+                                • Пишите названия иностранных марок и латиницей, и кириллицей (например, Toyota и Тойота);</ul>
+
+
+                            <ul>
+                                • Учитывайте профессиональные термины (сленг). Например, «наружная реклама» и «наружка», «сувенирная продукция» и «сувенирка», «выделенная линия» и «выделенка».</ul>
+
+
+                            <ul>
+                                • Не забывайте о синонимах. Например, к словосочетанию «продажа автомобилей» имеет смысл добавить «продажа машин». Некоторые популярные синонимы можно найти в словаре русских синонимов и сходных по смыслу выражений, а также в кратком словаре синонимов.</ul>
+
+
+
+
+                            <ul>
+                                • Не используйте общие слова, такие как «ремонт», «реклама», «аренда», «доставка» и т. п., поскольку это снижает эффективность рекламной кампании. Вместо них имеет смысл использовать словосочетания, например: «ремонт принтеров», «наружная реклама», «аренда грузовиков».
+                            </ul>
+
+
+
+                            <strong>Основные принципы подбора ключевых слов:</strong>
+
+
+                            <ul>
+                                • Ключевые слова должны соответствовать теме объявления;</ul>
+
+
+                            <ul>
+                                • Чем больше ключевых слов, тем больше вероятность показа объявления и перехода на сайт;</ul>
+
+
+                            <ul>
+                                • Не используйте общие слова, такие как «ремонт», «реклама», «доставка»;</ul>
+
+
+                            <ul>
+                                • Подберите все слова, по которым пользователи могут искать ваш товар или услугу.</ul>
+
+
+
+                            <ul>
+                                Оригинал: http://advertising.yandex.ru/welcome/pdf/direct_booklet.pdf
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <a name="mw"></a>
+                        <div class="aHeader" >Что такое минус-слова?</div>
+                        <h2>Как подбирать минус-слова?</h2>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/_paG5RyxQ34" frameborder="0" allowfullscreen></iframe>
+                        <div class="aText">
+                            <ul>Используйте минус-слова к ключевым фразам. В этом случае содержание в запросе пользователя кроме ключевой фразы еще и минус-слов исключит показы вашего объявления по такому запросу. Например, если к словосочетанию «ремонт автомобиля» добавить минус-слово «книги», объявление не будет показываться на популярный запрос «книги по ремонту автомобилей».
+                                Если в вашем объявлении используются пересекающие фразы, например "ремонт автомобиля" и "ремонт автомобиля Honda", то лучше первую фразу уточнить минус-словом "Honda", в этом случае фразы "ремонт автомобиля -Honda" и "ремонт автомобиля Honda" не будут конкурировать при выборе объявления для показа
+                                Вычитать можно только отдельные слова, но не словосочетания. Если из слова «ремонт» вы хотите вычесть «Санкт-Петербург», то в поле ключевых слов нужно написать: «ремонт -санкт -петербург».</ul>
+
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <a  name="ca"></a>
+                        <div class="aHeader">Как написать продающее объявление?</div>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/uX0LQXP8WZ0" frameborder="0" allowfullscreen></iframe>
+                        <div class="aText"><ul>
+                            <strong>Правило ODC</strong></ul>
+
+
+                            <ul>
+                                Главное правило рекламных сообщений. Примеры использования этого правила вы найдете у таких компаний, как MediaMarkt, Ikea, Яндекс и так далее. Узнав его, вы начнете наблюдать за рекламой и увидите, что это правило постоянно применяется в хорошей рекламе.
+                                Правило представляет собой аббревиатуру трех английскиx слов — «ODC».</ul>
+
+
+                            <ul>
+                                •	«O» — offer (предложение),</ul>
+
+
+                            <ul>
+                                •	«D» — deadline (ограничение по времени),</ul>
+
+
+                            <ul>
+                                •	«С» — call to action (призыв к действию).</ul>
+
+
+                            ODC — это некий чек-лист, по которому вы должны действовать при составлении объявления, рекламного сообщения или вообще рекламы как таковой. Давайте теперь подробно рассмотрим каждый из этих трех пунктов.
+
+                            <ul>
+                                <strong>Offer. Предложение</strong></ul>
+
+
+                            Offer — это сообщение, увидев которое, человек понимает, что оно несет в себе определенную выгоду. Не просто лучшие цены и хорошее качество, а конкретно: например, «21 роза за 100 рублей». Это удачное предложение.
+                            Неудачное предложение: «Стул лучшего качества». У человека сразу возникает вопрос: «Вообще непонятно, какой стул и сколько он стоит?»
+                            Предложение должно быть максимально ясным, содержать конкретные цифры, названия, ключевые моменты.
+                            К примеру: «Стул от 999 рублей», «Кожаное кресло от 1999 рублей» — вкусные, заманчивые, хорошие предложения, после прочтения которых человек хочет купить этот товар.
+                            Главный критерий, по которому можно оценить предложение, — желание человека получить то, что вы предлагаете. Подробней об этом сказано в статье о продающих заголовках. Заголовок (или предложение) — это ключевая мысль рекламы, от которой зависит 80 % успеха.
+                            <strong><ul>
+                                Deadline. Ограничение по времени</ul></strong>
+
+
+                            Что же такое дедлайн? Лучший дедлайн — время. Время на покупку, время действия акции, время проведения распродажи.
+                            Яркий пример ограничения по времени вы можете увидеть на афишах о гастролях артистов или певцов. На всех плакатах указаны даты, в которые вы можете прийти на выступление.
+                            Не успеешь прийти на программу — больше никогда не увидишь это шоу. У человека остается два варианта: сейчас или никогда. Другого выбора нет — это дедлайн.
+                            Дедлайн по времени работает лучше всего. Это может быть ограничение на очень хорошую цену, на скидку, на эксклюзивность (к примеру, первые продажи).
+                            Для рекламы очень хорошо действуют ограничения в 1–3 дня, а идеальный дедлайн — сутки. Зачастую не получается ставить такие ограничения в силу того, что акции, листовки, билборды (там, где у вас размещена реклама) просто не успевают сработать в эти сроки. В этом случае нужно просто подстраиваться под конкретную акцию, но помните, что чем меньше дедлайн, тем лучше он работает.
+                            Хуже всего действуют дедлайны в несколько недель, потому что у человека «размазывается» концентрация внимания, он не видит необходимости купить сейчас. Он откладывает поход в ваш магазин на некоторое время, а потом просто забывает об этом.
+                            <strong><ul>
+                                Call to action. Призыв к действию</ul></strong>
+
+
+
+
+                            Покупатель сам по себе зачастую довольно ленив. Он не всегда любит о чем-либо думать или догадываться, ему нравится, когда все делают за него или хотя бы просто говорят, что нужно делать.
+                            Часто бывает так, что рекламное сообщение идеально подходит для выбранной целевой аудитории, правильно поставленный дедлайн подстегивает активность покупателей. Но отсутствие инструкций убивает рекламу, сводит на нет весь труд.
+                            Без инструкций человек теряется, вы заставляете его самого думать, как получить то, что он хочет, а ему это не нравится. Покупатели не должны думать, как найти ваш сайт в Интернете. У них не должно возникать вопросов, как с вами связаться, после прочтения рекламы они должны четко знать, как сделать покупку.
+                            Маркетологи называют это «закрытием».
+                            «Закрыть» человека на что-то — дать ему четкие и конкретные инструкции в повелительном наклонении, как заказать ваш товар или услугу.
+                            Если он должен позвонить по телефону, то так и нужно писать в рекламном сообщении: «Звоните 8 800 00 00!»
+                            Если он должен найти товар на сайте: «Ищите на www.vashsait.ru».
+                            Если ваш магазин находится на первом этаже торгового центра: «Спуститесь на первый этаж и идите направо. Ищите нас возле стойки с информацией».
+                            Итак, мы с вами составили пошаговый чек-лист для написания рекламных сообщений: offer — deadline — call to action. Вы обязательно должны указывать предложение, ограничение и призыв к действию, к конкретному действию, которое человек должен выполнить. Тогда реклама ваша сработает максимально эффективно.
+
+                            <ul>
+                                Оригинал: http://molodost.bz/base/articles/odc/</ul>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="answer">
+                        <div class="aHeader" >Как написать выделяющееся объявление?</div>
+                        <a name="ra"></a>
+                        <h2>Как редактировать объявления?</h2>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/hamUJBalp-s" frameborder="0" allowfullscreen></iframe>
+                        <div class="aText"><ul>
+                            • Используйте ключевые слова в тексте или заголовке объявления. Если в объявлении содержатся ключевые слова, то при показе на поиске Яндекса они выделяются жирным шрифтом. А так же их синонимы. Если их нет, ваше объявление может оказаться незаметным для потенциальных клиентов, даже если находится на одной из лучших позиций</ul>
+
+
+                            <ul>
+                                •	Выделяйте цену в объявлении. Цена может быть выделена жирным в объявлении Директа только при условии, что пользователь набрал в своем запросе слово “цена”.</ul>
+
+
+                            <ul>
+                                •	Создавайте несколько конкретных объявлений вместо одного общего. Составьте отдельное объявление для каждого предложения, которое вы готовы сделать потенциальным клиентам. Например, автомастерская, которая специализируется на ремонте автомобилей Lexus, Toyota и Subaru, может дать одно объявление по запросам, связанным с ремонтом автомобилей Lexus, другое — для автомобилей марки Toyota, третье — Subaru. При этом ключевые фразы для каждого объявления должны содержать соответствующие названия марок.</ul>
+
+
+                            <ul>
+                                •	Используйте максимум возможных ресурсов для создания объявлений. Старайтесь оставить как можно меньше неизрасходованных символов. Используйте знаки препинания в конце объявлений. Восклицательный знак в конце объявления положительно влияет на CTR. (Запрещено в Google Adwords). Используйте визитку для объявлений.</ul>
+
+
+                            <ul>
+                                •	Расскажите об уникальности вашего предложения: доставке, бонусах, скидках. По данным нашего исследования, обещание доставить товар увеличивает 6 долю людей, которые перешли по объявлению более чем в 1,5 раза (на 56%). Также среди общего числа посетителей сайта на 23% возрастает доля людей, ставших клиентами. Если ваше предложение выгодно отличается от предложений конкурентов, упомяните о своих преимуществах в тексте объявления. — Используйте слова-стимуляторы, чтобы привлечь внимание пользователей именно к вашему объявлению.Наше исследование показало, что объявления, содержащие такие слова, как: бесплатно, распродажа, торопитесь и др.— имеют в несколько раз более высокий CTR (долю людей, которые перешли по объявлению), чем у среднего объявления в Директе</ul>
+
+
+                            <ul>
+                                •	Экспериментируйте и сравнивайте результаты. Иногда невозможно рассказать обо всех преимуществах рекламного предложения в одном объявлении. В этом случае используйте наши рекомендации в разных комбинациях и оценивайте эффективность объявления с помощью данных статистики. В конечном итоге вы подберете такой вариант объявления, который будет наилучшим образом работать именно на ваш бизнес.
+                            </ul>
+
+
+                            <ul>Оригинал: http://advertising.yandex.ru/welcome/pdf/direct_booklet.pdf
+                            </ul>
+
+
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="aHeader" >Как сохранить кампанию?</div>
+                        <a name="sc"></a>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/QoIgB9j6eu8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="answer">
+                        <div class="aHeader" >Как загрузить кампанию в Яндекс Директ?</div>
+                        <a name="uc"></a>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/lQw4q8W2dBI" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="answer">
+                        <div class="aHeader" >Как загрузить кампанию в Google Adwords?</div>
+                        <a name="ucg"></a>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/lwXXOJ1xjG4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- HTML END -->
+
+            <SCRIPT type="text/javascript">
+
+            </SCRIPT>
+
+            <STYLE type="text/css">
+
+
+                #faqform {
+                    height: 85% !important;
+                    width: 100% !important;
+                }
+
+                #faqform > div{
+                    height: 100%;
+                    display: block;
+                    float: left;
+                    text-align: left;
+                }
+
+                #questions{
+                    width: 27%;
+                }
+
+                .question{
+                    width: 100%;
+                    height: 15px;
+                    margin-bottom: 15px;
+                    display: inline-block;
+                    color: #000000;
+                }
+                #answers{
+                    width: 70%;
+                    overflow: auto;
+                }
+                .answer {
+                    width: 100%;
+                }
+                .aHeader{
+                    width: 100%;
+                    font-size: 30px;
+                    color: #000000;
+
+                }
+
+                .aText{
+                    width: 100%;
+                    font-size: 17px;
+                    color: #000000;
+                }
+
+
+            </STYLE>
+            </div>
+            </div>
+
+            <!-- окно стандартных минус слов -->
+            <div id="adddefminwords_defmin" class="hidwind infoblock shadowD">
+                <a  class="hideindbtn" >Закрыть</a>
+                <div class="hunder">Стандартные минус слова</div>
+                <div class="infoline"><input type="button" value="Выбрать все"/> <input type="button" value="Снять все"/></div>
+                <div id="defminwordslist">
+                </div>
+            </div>
+
+            <!-- fa-question-circle окно помощи на вопрос -->
+            <div id="helpwind" class="hidwind infoblock shadowD">
+                <a  class="hideindbtn" >Закрыть</a>
+                <div id="helptitle" class="hunder">Заголовок</div>
+                <div id="helptext" class="infoline">Текст помощи</div>
+            </div>
+
+            <div id="yandexLogin" class="hidwind infoblock shadowD">
+                <div class="hunder">Авторизация</div>
+                <div class="infoline"><span id="yandexloginbtn"  href="" title="Яндекс"><img src="img/login-with-yandex-7.png" /> </span></div>
+                <div class="infoline"></div>
+                <div class="infoline">Пояснения к уровням доступа:</div>
+                <div class="infoline">Yandex.Логин - для учетной записи</div>
+                <div class="infoline">Yandex.Директ - для работы с WordStat</div>
+
+            </div>
+
+            <div id="processInfo" class="hidwind infoblock shadowD">
+                <a  class="hideindbtn" >Закрыть</a>
+                <div class="hunder"><span class="uname"></span>, START5 роботы работают. За ВАС</div>
+                <div class="infoline">Что они сейчас делают:</div>
+                <div id="curW" class="infoline"></div>
+                <div class="infoline"></div>
+                <div class="infoline">Что сделали:</div>
+                <div id="doneW" class="infoline"></div>
+            </div>
+
+            <div id="payWnd" class="hidwind infoblock shadowD">
+                <a  class="hideindbtn" >Закрыть</a>
+                <div class="hunder">Результаты</div>
+                <div class="infoline"><div  id="yaRklnk"></div></div>
+                <!--<div class="infoline">Скачать: <a id="goRk" class="rkDownload">РК Google</a><div  id="yaRklnk"></div></div>
+                <div class="infoline">Скачать: <a id="beRk" class="rkDownload">РК Begun</a><div  id="yaRklnk"></div></div>-->
+                <div class="infoline"></div>
+                <div class="infoline" id="annDef"><strong>Вы можете поддержать проект и по окончанию бета-тестирования получить доступ к бесплатному использованию сервиса.</strong></div>
+                <div class="infoline">
+
+                    <div class="price-don">1500 р - 2 месяца</div>
+                    <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=410011901951015&quickpay=small&yamoney-payment-type=on&button-text=06&button-size=s&button-color=orange&targets=2+%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0&default-sum=1500&fio=on&mail=on" width="162" height="30"></iframe>
+                </div>
+                <div class="infoline">
+                    <div class="price-don">4499 р - 6 месяцев</div>
+                    <iframe  frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=410011901951015&quickpay=small&yamoney-payment-type=on&button-text=06&button-size=s&button-color=orange&targets=2+%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0&default-sum=1500&fio=on&mail=on" width="162" height="30"></iframe>
+                </div>
+                <div class="infoline">
+                    <div class="price-don">9999 р - 12 месяцев</div>
+                    <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=410011901951015&quickpay=small&yamoney-payment-type=on&button-text=06&button-size=s&button-color=orange&targets=12+%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B5%D0%B2&default-sum=9999&fio=on&mail=on" width="162" height="30"></iframe>
+                </div>
+                <div class="infoline"></div>
+                <div class="infoline" id="helpDef"><strong>Оставьте свои впечатления и пожелания.</strong><a href="http://vk.com/start5_bz">Мы ВКонтекте</a></div>
+
+
+            </div>
+
+            <div id="CPCwnd" class="hidwind infoblock shadowD">
+                <a  class="hideindbtn" >Закрыть</a>
+                <div class="hunder">Настройка цены за клик</div>
+                <div class="infoline"><div class="gensettext">CPC Яндект</div><input id="clickcost" type="text" value="1"/> </div>
+                <div class="infoline"><div class="gensettext">РСЯ Яндекс </div><input id="clickcostNet" type="text" value="1"/> </div>
+                <div class="infoline"><div class="gensettext">CPC Google </div><input id="clickcostGo" type="text" value="1"/> </div>
+                <div class="infoline"><div class="gensettext">КМC Google </div><input id="clickcostNetGo" type="text" value="1"/> </div>
+                <input id="clickcostBe" hidden="hidden" type="text" value="1"/>
+                <input id="clickcostNetBe" hidden="hidden" type="text" value="1"/>
+            </div>
+
+
+            <div id="vizWnd" class="hidwind  pusherb shadowD blockdec infoblock">
+                <a class="hideindbtn">Закрыть</a>
+                <div class="hunder">Визитка <span id="help11" onmouseover="nhpup.popup('', {'width': 290});" class="fa fa-question-circle"></span></div>
+                <div id="vizpart1">
+                    <div class="infoline">
+                        <div class="gensettext">Страна*</div>
+                        <input id="vizcountry" type="text" >
+                    </div>
+                    <div class="infoline">
+                        <div class="gensettext">Город*</div>
+                        <input id="vizcity" type="text">
+                    </div>
+                    <div class="infoline">
+                        <div class="gensettext">Телефон*</div>
+                        <input id="vizcodeCountry" type="text">
+                        <input id="vizcodeCity" type="text">
+                        <input id="vizcodeTelephone" type="text">
+                        <input id="vizaddcode" type="text">
+
+                    </div>
+
+                    <div class="infoline">
+                        <div class="gensettext">Название компании*</div>
+                        <input id="vizcompanyNameFIO" type="text">
+                    </div>
+                    <div class="infoline">
+                        <div class="gensettext">Контактное лицо</div>
+                        <input id="vizcontactFace" type="text">
+                    </div>
+                    <div class="infoline">
+                        <div class="gensettext">Почтовый адресс</div>
+                        <input id="vizcostStreet" onfocus="if (this.value=='Улица') this.value = ''" type="text" value="Улица">
+                        <input id="vizpostDom" onfocus="if (this.value=='Дом') this.value = ''" type="text" value="Дом">
+                        <input id="vizpostCorpus" onfocus="if (this.value=='Корпус') this.value = ''" type="text" value="Корпус">
+                        <input id="vizpostOffice" onfocus="if (this.value=='Офис') this.value = ''" type="text"  value="Офис">
+                    </div>
+
+
+                    <div class="infoline">
+                        <div class="gensettext">Время работы</div>
+                        <input id="vizwordDS1" type="text"  value="пн">
+                        <input id="vizwordDE1" type="text" value="ср">
+                        <input id="vizwordHS1" type="text"  value="9">
+                        <input id="vizwordHE1" type="text"  value="18">
+                    </div>
+
+                    <div class="infoline">
+                        <div class="gensettext">Время работы</div>
+                        <input id="vizwordHS2" type="text"  value="чт">
+                        <input id="vizwordHE2" type="text" value="пт">
+                        <input id="vizwordDS2" type="text" value="10">
+                        <input id="vizwordDE2" type="text" value="19">
+                    </div>
+
+
+
+
+                    <div class="infoline">
+                        <div class="gensettext">Время работы</div>
+                        <input id="vizwordDS3" type="text" value="сб">
+                        <input id="vizwordDE3" type="text" value="вс">
+                        <input id="vizwordHS3" type="text" value="9">
+                        <input id="vizwordHE3" type="text" value="21">
+                    </div>
+
+
+                </div>
+                <div id="viz2part">
+                    <div class="infoline">
+                        <div class="gensettext">ОГРН</div>
+                        <input id="vizOGRN" type="text">
+                    </div>
+                    <div class="infoline">
+                        <div class="gensettext">E-mail</div>
+                        <input id="vizmail" type="text">
+                    </div>
+                    <div class="infoline">
+                        <div class="gensettext">Интернет пейджер</div>
+                        <input id="vizinetPagerType" type="text">
+                        <input id="vizinetPagerLogin" type="text">
+                    </div>
+
+                    <div class="infoline">
+                        <div class="gensettext">Подробнее о товаре или услуге</div>
+                        <input id="vizGoodInfo" type="text">
+
+
+                    </div>
+                    <div class="infoline"></div>
+                </div>
+            </div>
+            <!-- окно правил -->
+            <div id="rulesetwnd" class="hidwind  pusherb shadowD blockdec">
+                <a  class="hideindbtn" >Закрыть</a>
+                <div class="hunder">Настройка правил <span id="help10" onmouseover="nhpup.popup('', {'width': 290});" class="fa fa-question-circle"></span></div>
+
+
+                <div class="newline"></div>
+                <div class="announc hunder">
+                    <div class="announcHeader">
+                        <span>Правила</span><!-- <span class="rulecount">5</span>--> <input id="addrulebtn" type="button" value="Добавить"/>
+                    </div>
+                    <div class="announcHeader">
+
+                        <span class="plotMenu"></span>
+                        <img src="img/yaLogo.png"/>
+
+                    </div>
+                    <div class="announcHeader">
+                        <span class="plotMenu"></span>
+                        <img src="img/goLogo.png"/>
+                    </div>
+                    <div class="announcHeader">
+                        <span class="plotMenu"></span>
+                        <img src="img/logo-begun.png"/>
+                    </div>
+                </div>
+                <div id="annrulesdiv">
+
+
+
+
+                </div>
+            </div>
+
+            <div id="fade" class="black_overlay"></div>
+            <div id="hid">
+                <div class="ruleTempl fa-border pusherb">
+                    <div class="announcEntry ">
+                        <div class="keyInfo infoline ">
+                            <span class="f14"></span> <input class="ruleName" type="text" value="Назавние"/>
+                        </div>
+                        <div class="keyInfo infoline f11"><input class="rulekwHInp" type="checkbox" checked="checked"/><span> Добавить ключевик в заголовк</span></div>
+                        <div class="keyInfo infoline f11"><input class="ruleHInp" type="text" value="Ваш заголовок"/></div>
+
+                        <div class="keyInfo infoline"><input class="rulekwTInp" type="checkbox" checked="checked"/><span> Добавить ключевик в текст</span></div>
+                        <div class="keyInfo infoline">
+                            <input  class="ruleTInp" type="text" value="" hidden="true"/>
+                            <input  class="ruleTInp1" type="text" value="Текст из правила"/>
+                            <input  class="ruleTInp2" type="text" value="Вторая строка"/>
+                        </div>
+
+                        <div class="keyInfo infoline"><input  class="ruleUInp" type="text" value="http://www.test.com"/></div>
+                        <div class="keyInfo infoline"><input class="deleteRulebtn" type="button" value="Удалить" /></div>
+                    </div>
+                    <div class="announcEntry yaBG">
+                        <div class="yanHeader"><strong>Ключевик</strong> Ваш заголовок</div>
+                        <div class="yanText"><strong>Ключевик</strong> Ваше объявление</div>
+                        <div class="yanUrl">http://www.test.com</div>
+                        <div class="newline">
+                            <span class="infotext"> Заголовок: <strong><span class="yahc"></span></strong> из 33 символов</span>
+                        </div>
+                        <div class="newline">
+                            <span class="infotext"> Текст: <strong><span class="yatc"></span></strong> из 75 символов</span>
+                        </div>
+                    </div>
+                    <div class="announcEntry gooBG ">
+                        <div class="gooHeader">Отдых На Гоа‎</div>
+                        <div class="gooUrl">www.tripadvisor.ru/‎</div>
+                        <div class="gooText">Сравнить цены и бронировать сейчас!</div>
+                        <div class="gooText2">Сравнить цены и бронировать сейчас!</div>
+                        <div class="newline">
+                            <span class="infotext"> Заголовок: <strong><span class="yahc"></span></strong> из 25 символов</span>
+                        </div>
+                        <div class="newline">
+                            <span class="infotext"> Текст: <strong><span class="gotc2 yatc"></span></strong> из 70 символов</span>
+                        </div>
+                    </div>
+                    <div class="announcEntry beBG">
+                        <div class="beHeader">Отдых На Гоа!‎</div>
+                        <div class="beText">300+ отелей! 7 000 000 клиентов выбрали систему AGODA! Оплата брони картой!</div>
+                        <div class="beText2">300+ отелей! 7 000 000 клиентов выбрали систему AGODA! Оплата брони картой!</div>
+                        <div class="beUrl">www.agoda.com‎</div>
+                        <div class="newline">
+                            <span class="infotext"> Заголовок: <strong><span class="yahc"></span></strong> из 30 символов</span>
+                        </div>
+                        <div class="newline">
+                            <span class="infotext"> Текст: <strong><span class="gotc2 yatc"></span></strong> из 70 символов</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="announc">
+                    <div class="announcEntry">
+                        <span class="anNumb"></span><div class="keyInfo">key text</div>
+                        <div class="addkw">Транслит: <span class="keyInfoTrans"></span></div>
+                        <div class="addkw">Абракадабра: <span class="keyInfoAbra"></span></div>
+                    </div>
+                    <div class="announcEntry yaBG annData">
+                        <div class="newline">
+                            <input type="checkbox" checked="checked" class="selAnCB yaEnS"/>
+                            <span class="yaData annMenu fa fa-bars"></span>
+
+                        </div>
+                        <div class="yanHeader seHeader sese yanse"></div>
+                        <div class="yanText seText sese yanse"></div>
+                        <div class="yanUrl seUrl sese yanse"></div>
+                        <div class="newline">
+                            <span class="infotext"> Заголовок: <strong><span class="yahc"></span></strong> из 33 символов</span>
+                        </div>
+                        <div class="newline">
+                            <span class="infotext"> Текст: <strong><span class="yatc"></span></strong> из 75 символов</span>
+                        </div>
+                    </div>
+                    <div class="announcEntry gooBG annData"> <!-- errorBg <span class="annMenu fa fa-exclamation-circle"> Недопустимый символ "!"</span> -->
+                        <div class="newline">
+                            <input type="checkbox" checked="checked" class="selAnCB goEnS"/>
+
+                            <span class="gooData annMenu fa fa-bars"></span>
+                        </div>
+                        <div class="gooHeader seHeader sese goose">‎</div>
+                        <div class="gooUrl seUrl sese goose">‎</div>
+                        <div class="gooText seText sese goose"></div>
+                        <div class="gooText2 seText sese goose"></div>
+                        <div class="newline">
+                            <span class="infotext"> Заголовок: <strong><span class="gohc"></span></strong> из 25 символов</span>
+                        </div>
+                        <div class="newline">
+                            <span class="infotext"> Текст: <strong><span class="gotc"></span></strong> из 35 символов</span>
+                        </div>
+                    </div>
+                    <div class="announcEntry beBG annData">
+                        <div class="newline">
+                            <input type="checkbox" checked="checked" class="selAnCB beEnS"/>
+                            <span class="beData annMenu fa fa-bars"></span>
+
+                        </div>
+                        <div class="beHeader seHeader sese bese">‎</div>
+                        <div class="beText seText sese bese"></div>
+                        <div class="beText2 seText sese bese"></div>
+                        <div class="beUrl seUrl sese bese">‎</div>
+                        <div class="newline">
+                            <span class="infotext"> Заголовок: <strong><span class="behc"></span></strong> из 30 символов</span>
+                        </div>
+                        <div class="newline">
+                            <span class="infotext"> Текст: <strong><span class="betc"></span></strong> из 70 символов</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div><!-- КОНЕЦ Основной блок -->
+        <div id="backtotop"><span class="fa fa-chevron-up"></span> Наверх</div>
+        <div id="footter">©2014 - Start5 - <strong>Генератор рекламных компаний</strong> beta - <span id="version"></span>
+            <!-- begin WebMoney Transfer : attestation label -->
+            <br/>
+            <a href="https://passport.webmoney.ru/asp/CertView.asp?purse=R222828166950" target=_blank><IMG SRC="http://www.webmoney.ru/img/icons/88x31_wm_blue_on_transparent_ru.png" title="Здесь находится аттестат нашего WM идентификатора R222828166950" border="0"><br><font size=1>Проверить аттестат</font></a>
+            <!-- end WebMoney Transfer : attestation label --></div>
+    </body>
+</html>
